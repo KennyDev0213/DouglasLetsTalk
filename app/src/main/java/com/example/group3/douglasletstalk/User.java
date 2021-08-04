@@ -19,4 +19,24 @@ public class User extends Person{
         return this.password == password;
     }
 
+    @Override
+    public void login() {
+
+    }
+
+    @Override
+    public void logout() {
+
+    }
+
+    @Override
+    public void updateProfile(String firstName, String lastName, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+    }
+
+    protected void updatePassword(String password){
+        this.password = password;
+    }
 }

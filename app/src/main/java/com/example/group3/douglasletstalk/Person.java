@@ -1,6 +1,6 @@
 package com.example.group3.douglasletstalk;
 
-public class Person {
+public abstract class Person {
     String firstName;
     String lastName;
     String email;
@@ -10,15 +10,9 @@ public class Person {
         this.lastName = lastName;
     }
 
-     public void login(){
+     public abstract void login();
 
-     }
+     public abstract void logout();
 
-     public void logout(){
-
-     }
-
-     public void updateProfile(String email){
-        this.email = email;
-     }
+     abstract public void updateProfile(String firstName, String lastName, String email);
 }
