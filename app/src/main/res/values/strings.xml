@@ -89,4 +89,5 @@
     <string name="MembersTitle1">Members</string>
     <string name="Members">(Group members)</string>
     <string name="backBtn">Back</string>
+    <string name="joinBtn">Join</string>
 </resources>
