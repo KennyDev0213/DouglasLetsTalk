@@ -11,11 +11,16 @@ public class EventManager {
     static DatabaseHelper EventDAO;
 
     //creates a new event/club/group
-    static public void createEvent(Person organizer){
-        String newEventId = generateEventID(organizer);
-        Event newEvent = new Event(newEventId, organizer.getUserID() , "");
-        EventDAO.insertEvent(newEvent);
-        EventIdList.add(newEvent.getGroupID());
+    static public boolean createEvent(String groupName, String groupDescription, String organizer){
+        try {
+            String newEventId = generateEventID(organizer);
+            Event newEvent = new Event(newEventId, groupName, groupDescription, organizer, "");
+            EventDAO.insertEvent(newEvent);
+            EventIdList.add(newEvent.getGroupID());
+            return true;
+        }catch (Exception e){
+            return false;
+        }
     }
 
     //to remove an event from the database via eventID
