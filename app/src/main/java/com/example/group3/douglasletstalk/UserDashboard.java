@@ -13,6 +13,7 @@ public class UserDashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_dashboard);
 
+
         Button hostAGroupButton = findViewById(R.id.hostAGroupButton);
         hostAGroupButton.setOnClickListener(new View.OnClickListener() {
             @Override
