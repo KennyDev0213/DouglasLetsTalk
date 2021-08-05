@@ -47,7 +47,7 @@ public class EventsHomePageActivity extends AppCompatActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(EventsHomePageActivity.this, LoginActivity.class));
+                startActivity(new Intent(EventsHomePageActivity.this, EnterActivity.class));
             }
         });
     }
