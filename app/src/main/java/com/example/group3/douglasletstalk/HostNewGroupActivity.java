@@ -33,7 +33,7 @@ public class HostNewGroupActivity extends AppCompatActivity {
                 String newDescription = descriptionText.getText().toString();
                 String newCoordinator = coordinatorText.getText().toString();
 
-                String eventID = "";
+                String eventID = newName+ "123";
                 Event newEvent = new Event(eventID, newName, newDescription, newCoordinator, "");
                 DB.insertEvent(newEvent);
 

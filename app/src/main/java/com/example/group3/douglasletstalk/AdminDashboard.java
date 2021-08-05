@@ -30,7 +30,7 @@ public class AdminDashboard extends AppCompatActivity {
             }
         });
 
-        deleteEvent = (Button) findViewById(R.id.deleteUserAccountBtn);
+        deleteEvent = (Button) findViewById(R.id.deleteEventBtn);
         deleteEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
