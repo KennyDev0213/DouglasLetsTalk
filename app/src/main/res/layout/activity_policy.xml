@@ -23,9 +23,8 @@
         android:id="@+id/AcademicIntegrityTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
         android:text="@string/AcademicIntegrityTitle"
         android:textSize="15sp"
         android:textStyle="bold"
@@ -57,9 +56,8 @@
     <TextView
         android:id="@+id/AdvertisementsDescription"
         android:layout_width="335dp"
-        android:layout_height="123dp"
+        android:layout_height="88dp"
         android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
         android:layout_marginTop="4dp"
         android:text="@string/AdvertisementsDescription"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,10 +78,19 @@
     <TextView
         android:id="@+id/IllegalActivityDescription"
         android:layout_width="359dp"
-        android:layout_height="131dp"
+        android:layout_height="70dp"
         android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
         android:text="@string/IllegalActivityDescription"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/IllegalActivityTitle" />
+
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="46dp"
+        android:text="@string/backBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </android.support.constraint.ConstraintLayout>

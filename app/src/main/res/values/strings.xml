@@ -76,4 +76,5 @@
     <string name="Coordinators">(Group coordinator)</string>
     <string name="MembersTitle1">Members</string>
     <string name="Members">(Group members)</string>
+    <string name="backBtn">Back</string>
 </resources>
