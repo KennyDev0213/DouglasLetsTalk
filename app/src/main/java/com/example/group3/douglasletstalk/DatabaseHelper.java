@@ -181,5 +181,63 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     // ********************** Person **************************************************
-    //public boolean checkIfPersonExists
+
+
+
+    // ********************** Event **************************************************
+    public Event getEventById(String eventID) {
+        String query = "SELECT * FROM " + EVENT_TABLE + " WHERE " + EVENT_ID_COL + " = '" + eventID + "';";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        Event event = null;
+        if (cursor.moveToNext()) {
+            String coordinatorID = cursor.getString(1);
+            String dateOfCreation = cursor.getString(2);
+            event = new Event(eventID, coordinatorID, dateOfCreation);
+        }
+        cursor.close();
+        db.close();
+        return event;
+    }
+
+    public boolean removeEventById(String eventID) {
+        String query = "SELECT * FROM " + EVENT_TABLE + " WHERE " + EVENT_ID_COL + " = '" + eventID + "';";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.getCount() > 0 ) {
+            long result = db.delete("EVENT_TABLE", "eventID=?", new String[] {eventID});
+            if (result == -1) {
+                return false;
+            } else {
+                return true;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    public void insertEvent(Event event) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(EVENT_ID_COL, event.getGroupID());
+        values.put(EVENT_COORDINATOR_COL, event.getCoordinatorID());
+        values.put(EVENT_DATE_COL, event.getDateOfCreation());
+        db.insert(EVENT_TABLE, null, values);
+        db.close();
+    }
+
+    public String[] getEventsAvailable() {
+        String query = "SELECT " + EVENT_ID_COL + " FROM " + EVENT_TABLE + " ;";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        String[] events = null;
+        int i =0;
+        while(cursor.moveToNext()){
+            events[i] = cursor.getString(0);
+            i++;
+        }
+        return events;
+    }
+
+
 }

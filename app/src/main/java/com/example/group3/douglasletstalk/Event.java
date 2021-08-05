@@ -8,7 +8,12 @@ public class Event {
     String groupID;
     String coordinatorID;
     String dateOfCreation;
-    ArrayList<Person> members = null;
+
+    public Event(String groupID, String coordinatorID, String dateOfCreation) {
+        this.groupID = groupID;
+        this.coordinatorID = coordinatorID;
+        this.dateOfCreation = dateOfCreation;
+    }
 
     public String getGroupID() {
         return groupID;
@@ -32,13 +37,5 @@ public class Event {
 
     public void setDateOfCreation(String dateOfCreation) {
         this.dateOfCreation = dateOfCreation;
-    }
-
-    public ArrayList<Person> getMembers() {
-        return members;
-    }
-
-    public void setMembers(ArrayList<Person> members) {
-        this.members = members;
     }
 }
