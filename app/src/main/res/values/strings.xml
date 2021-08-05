@@ -1,7 +1,5 @@
-<resources>
-    <string name="app_name">Douglas Let\'s Talk</string>
-    <string name="btn_login">Log In</string>
-    <string name="btn_signup">Sign Up</string>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <string name="app_name">CSIS3275-Group3-Let\'sTalk</string>
 
     <!--    Enter Activity-->
     <string name="EnterButton">Enter</string>
@@ -76,4 +74,6 @@
     <string name="Coordinators">(Group coordinator)</string>
     <string name="MembersTitle1">Members</string>
     <string name="Members">(Group members)</string>
+
+
 </resources>
