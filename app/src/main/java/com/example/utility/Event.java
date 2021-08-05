@@ -8,6 +8,7 @@ public class Event {
     DatabaseHelper DB;
 
     String groupID;
+    String groupName;
     String coordinatorID;
     String groupDescription;
     String dateOfCreation;
@@ -27,12 +28,19 @@ public class Event {
         }
     }
 
+
     public String getGroupID() {
         return groupID;
     }
 
     public void setGroupID(String groupID) {
         this.groupID = groupID;
+    }
+
+    public String getGroupName(){ return this.groupName; }
+
+    public void setGroupName(String groupName){
+        this.groupName = groupName;
     }
 
     public String getCoordinatorID() {
@@ -45,6 +53,12 @@ public class Event {
 
     public void setCoordinatorID(String coordinatorID) {
         this.coordinatorID = coordinatorID;
+    }
+
+    public String getGroupDescription(){return this.groupDescription;}
+
+    public void setGroupDescription(String groupDescription){
+        this.groupDescription = groupDescription;
     }
 
     public String getDateOfCreation() {

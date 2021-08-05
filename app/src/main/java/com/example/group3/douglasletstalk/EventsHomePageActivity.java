@@ -48,6 +48,7 @@ public class EventsHomePageActivity extends AppCompatActivity {
         Person coord = DB.getPersonById(event.getCoordinatorID());
         groupCoordinator.setText(coord.getUserName());
 
+        //work in progress need a way to get members
         String Members = "";
 
 

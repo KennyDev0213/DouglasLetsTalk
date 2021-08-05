@@ -4,7 +4,8 @@
     <string name="btn_signup">Sign Up</string>
 
     <!--    Enter Activity-->
-    <string name="EnterButton">Enter</string>
+    <string name="btnuser">Enter as User</string>
+    <string name="btnadmin">Enter as Admin</string>
     <string name="helpButton">Help</string>
 
     <!--    Login Activity-->
@@ -13,24 +14,32 @@
     <string name="registerBtn">No Account? Register!</string>
 
     <!--    login Information activity-->
-    <string name="douglasEmailTitle">Douglas College Email</string>
-    <string name="douglasEmailHint">Please Enter your Douglas College Email</string>
+    <string name="douglasid">Douglas College Student ID</string>
+    <string name="douglasidHint">Please Enter your Douglas College Student ID</string>
     <string name="douglasPasswordTitle">Password</string>
     <string name="douglasPasswordHint">Please Enter your Password</string>
-    <string name="confirmButton">Confirm</string>
+    <string name="confirmButton">Login</string>
 
+    <!-- Admin login  -->
+    <string name="adminid">Admin ID</string>
+    <string name="adminidHint">Enter your admin ID</string>
+    <string name="adminPasswordHint">Enter your password</string>
 
     <!--Register activity-->
     <string name="confirmInformationButton">Confirm Information</string>
     <string name="SID">Student ID</string>
     <string name="SIDHint">Please enter your Student ID number</string>
-    <string name="firstName">First Name</string>
-    <string name="firstNameHint">Please enter your first name</string>
-    <string name="lastName">Last Name</string>
-    <string name="lastNameHint">Please enter your last name</string>
+    <string name="Name">Name</string>
+    <string name="firstNameHint">Please enter your name</string>
+    <string name="Password">Password</string>
+    <string name="PasswordHint">Please enter your password</string>
     <string name="email">Douglas College Email</string>
     <string name="emailHint">Please enter your Douglas College email</string>
+    <string name="btnCreate">Create</string>
 
+    <!-- Delete -->
+    <string name="studentIDHint">Enter the Student ID </string>
+    <string name="btnDelete">Delete</string>
 
     <!--User Dashboard Activity-->
     <string name="Announcements">Announcements</string>
@@ -60,9 +69,9 @@
     <string name="AdvertisementsTitle">Advertisements</string>
     <string name="AdvertisementsDescription">Groups or Member of groups may not advertise products or services from any external organizations without approval from the Associate Vice-President Public Affairs</string>
     <string name="AcademicIntegrityTitle">Academic Integrity</string>
-    <string name="AcademicIntegrityDescription">Groups are not allowed to share academic resources such as Test, Quizzes, Assignments, or any other material that may result in plagerism.</string>
+    <string name="AcademicIntegrityDescription">Groups are not allowed to share academic resources such as Test, Quizzes, Assignments, or any other material that may result in plagiarism.</string>
     <string name="IllegalActivityTitle">Illegal or Illicit Activity</string>
-    <string name="IllegalActivityDescription">Any and all attempts to violate the law set under the Provincial Government or National GOvernment will be reported to the proper authorities.</string>
+    <string name="IllegalActivityDescription">Any and all attempts to violate the law set under the Provincial Government or National Government will be reported to the proper authorities.</string>
 
     <!--help page / frequently asked questions-->
     <string name="FrequentlyAskedQuestionsTitle">Frequently Asked Questions</string>

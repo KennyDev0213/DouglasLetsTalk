@@ -3,8 +3,10 @@ package com.example.utility;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
@@ -178,6 +180,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return admin;
     }
 
+
+
     // ********************** Person **************************************************
     public Person getPersonById(String userID) {
         String query = "SELECT * FROM " + PERSON_TABLE + " WHERE " + PERSON_USER_ID_COL + " = '" + userID + "';";
@@ -217,9 +221,55 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(PERSON_USER_ID_COL, person.getUserID());
         values.put(PERSON_USERNAME_COL, person.getUserName());
         values.put(PERSON_DATE_COL, person.getDateOfJoin());
+        values.put(PERSON_PASSWORD_COL, person.getPassword());
         db.insert(PERSON_TABLE, null, values);
         db.close();
     }
+
+    //authenticate user
+    public boolean checkIfPersonExists(String userId, String userPassword){
+        String query = "SELECT * FROM " + PERSON_TABLE + " WHERE " +
+                PERSON_USER_ID_COL + " = '" + userId + "' AND " +
+                PERSON_PASSWORD_COL + " = '" + userPassword + "';";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query,null);
+        boolean status = false;
+        if(cursor.moveToFirst()){
+            status = true;
+        }
+        else{
+            status = false;
+        }
+        cursor.close();
+        db.close();
+        return status;
+    }
+
+    //check the person exists or not
+    public boolean checkIfPersonExists(String userId){
+        String query = "SELECT * FROM " + PERSON_TABLE + " WHERE " +
+                PERSON_USER_ID_COL + " = '" + userId + "';";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query,null);
+        boolean status = false;
+        if(cursor.moveToFirst()){
+            status = true;
+        }
+        else{
+            status = false;
+        }
+        cursor.close();
+        db.close();
+        return status;
+    }
+
+    public void deletePerson(String userId){
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("DELETE FROM " + PERSON_TABLE + " WHERE " + PERSON_USER_ID_COL + " = '" + userId + "';");
+
+    }
+
+
 
     // ********************** Event **************************************************
     public Event getEventById(String eventID) {

@@ -15,17 +15,17 @@
         android:layout_marginTop="190dp"
         android:textSize="15sp"
         android:textStyle="bold"
-        android:text="@string/douglasid"
+        android:text="@string/adminid"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/userID"
+        android:id="@+id/adminID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:hint="@string/douglasidHint"
+        android:hint="@string/adminidHint"
+        android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dougalsEmailTitle" />
 
@@ -40,21 +40,21 @@
         android:textStyle="bold"
         android:text="@string/douglasPasswordTitle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userID" />
+        app:layout_constraintTop_toBottomOf="@+id/adminID" />
 
     <EditText
-        android:id="@+id/userPassword"
+        android:id="@+id/adminPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
-        android:hint="@string/douglasPasswordHint"
         android:inputType="textPassword"
+        android:hint="@string/adminPasswordHint"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/douglasPasswordTitle" />
 
     <Button
-        android:id="@+id/userLogin"
+        android:id="@+id/adminLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="161dp"
@@ -65,5 +65,5 @@
         android:text="@string/confirmButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/adminPassword" />
 </android.support.constraint.ConstraintLayout>
