@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Douglas Let\'s Talk</string>
+    <string name="btn_login">Log In</string>
+    <string name="btn_signup">Sign Up</string>
+</resources>
