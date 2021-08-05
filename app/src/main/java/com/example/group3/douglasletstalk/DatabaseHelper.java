@@ -180,6 +180,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return admin;
     }
 
+
+
     // ********************** Person **************************************************
     public Person getPersonById(String userID) {
         String query = "SELECT * FROM " + PERSON_TABLE + " WHERE " + PERSON_USER_ID_COL + " = '" + userID + "';";
@@ -222,6 +224,45 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.insert(PERSON_TABLE, null, values);
         db.close();
     }
+
+    //authenticate user
+    public boolean checkIfPersonExists(String userId, String userPassword){
+        String query = "SELECT * FROM " + PERSON_TABLE + " WHERE " +
+                PERSON_USER_ID_COL + " = '" + userId + "' AND " +
+                PERSON_PASSWORD_COL + " = '" + userPassword + "';";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query,null);
+        boolean status = false;
+        if(cursor.moveToFirst()){
+            status = true;
+        }
+        else{
+            status = false;
+        }
+        cursor.close();
+        db.close();
+        return status;
+    }
+
+    //check the person exists or not
+    public boolean checkIfPersonExists(String userId){
+        String query = "SELECT * FROM " + PERSON_TABLE + " WHERE " +
+                PERSON_USER_ID_COL + " = '" + userId + "';";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query,null);
+        boolean status = false;
+        if(cursor.moveToFirst()){
+            status = true;
+        }
+        else{
+            status = false;
+        }
+        cursor.close();
+        db.close();
+        return status;
+    }
+
+
 
     // ********************** Event **************************************************
     public Event getEventById(String eventID) {
