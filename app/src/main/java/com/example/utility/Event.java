@@ -16,8 +16,9 @@ public class Event {
     public Event(String groupID, String groupName, String groupDescription, String coordinatorID, String dateOfCreation) {
 
         this.groupID = groupID;
+        this.groupName = groupName;
         this.coordinatorID = coordinatorID;
-        //this.groupDescription = groupDescription;
+        this.groupDescription = groupDescription;
         //if the date is unspecified, assume it was created now
         if(dateOfCreation == "")
             this.dateOfCreation = dateOfCreation;
