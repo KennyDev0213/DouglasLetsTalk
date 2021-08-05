@@ -2,4 +2,78 @@
     <string name="app_name">Douglas Let\'s Talk</string>
     <string name="btn_login">Log In</string>
     <string name="btn_signup">Sign Up</string>
+
+    <!--    Enter Activity-->
+    <string name="EnterButton">Enter</string>
+    <string name="helpButton">Help</string>
+
+    <!--    Login Activity-->
+    <string name="LoginButton">Login</string>
+    <string name="LogoutButton">Logout</string>
+    <string name="registerBtn">No Account? Register!</string>
+
+    <!--    login Information activity-->
+    <string name="douglasEmailTitle">Douglas College Email</string>
+    <string name="douglasEmailHint">Please Enter your Douglas College Email</string>
+    <string name="douglasPasswordTitle">Password</string>
+    <string name="douglasPasswordHint">Please Enter your Password</string>
+    <string name="confirmButton">Confirm</string>
+
+
+    <!--Register activity-->
+    <string name="confirmInformationButton">Confirm Information</string>
+    <string name="SID">Student ID</string>
+    <string name="SIDHint">Please enter your Student ID number</string>
+    <string name="firstName">First Name</string>
+    <string name="firstNameHint">Please enter your first name</string>
+    <string name="lastName">Last Name</string>
+    <string name="lastNameHint">Please enter your last name</string>
+    <string name="email">Douglas College Email</string>
+    <string name="emailHint">Please enter your Douglas College email</string>
+
+
+    <!--User Dashboard Activity-->
+    <string name="Announcements">Announcements</string>
+    <string name="myGroupsTitle">My Groups</string>
+    <string name="groupsIAmAPartOfTitle">Groups I am a part of</string>
+    <string name="hostAGroupButton">Host a Group</string>
+    <string name="viewInvitesTitle">View my Invites</string>
+    <string name="policyButton">Policies</string>
+
+    <!--    Admin Dashboard Activity-->
+    <string name="createUserAccountBtn">Create User Account</string>
+    <string name="deleteUserAccountBtn">Delete User Account</string>
+
+    <!--    host new group-->
+    <string name="DescriptionTitle">Description</string>
+    <string name="DescriptionHint">Please type a description of the group</string>
+    <string name="GroupNameTitle">Group Name</string>
+    <string name="GroupNameHint">Please type the name of your group</string>
+    <string name="CoordinatorsTitle">Coordinator</string>
+    <string name="CoordinatorsHint">Please type the coordinator of this group</string>
+    <string name="MembersTitle">Members</string>
+    <string name="MembersHint">Please type the names of the members of this group</string>
+    <string name="finishButton">Finish</string>
+
+    <!--    policy page-->
+    <string name="policyTitle">Policies</string>
+    <string name="AdvertisementsTitle">Advertisements</string>
+    <string name="AdvertisementsDescription">Groups or Member of groups may not advertise products or services from any external organizations without approval from the Associate Vice-President Public Affairs</string>
+    <string name="AcademicIntegrityTitle">Academic Integrity</string>
+    <string name="AcademicIntegrityDescription">Groups are not allowed to share academic resources such as Test, Quizzes, Assignments, or any other material that may result in plagerism.</string>
+    <string name="IllegalActivityTitle">Illegal or Illicit Activity</string>
+    <string name="IllegalActivityDescription">Any and all attempts to violate the law set under the Provincial Government or National GOvernment will be reported to the proper authorities.</string>
+
+    <!--help page / frequently asked questions-->
+    <string name="FrequentlyAskedQuestionsTitle">Frequently Asked Questions</string>
+
+    <!--    events home page-->
+    <string name="DescriptionTitle1">Description</string>
+    <string name="Description">(description of group)</string>
+    <string name="GroupNameTitle1">Group Name</string>
+    <string name="GroupName">(name of group)</string>
+    <string name="CoordinatorsTitle1">Coordinator</string>
+    <string name="Coordinators">(Group coordinator)</string>
+    <string name="MembersTitle1">Members</string>
+    <string name="Members">(Group members)</string>
 </resources>
