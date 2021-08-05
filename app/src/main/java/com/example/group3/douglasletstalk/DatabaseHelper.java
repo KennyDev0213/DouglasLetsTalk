@@ -181,8 +181,47 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     // ********************** Person **************************************************
+    public Person getPersonById(String userID) {
+        String query = "SELECT * FROM " + PERSON_TABLE + " WHERE " + PERSON_USER_ID_COL + " = '" + userID + "';";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        Person person = null;
+        if (cursor.moveToNext()) {
+            String userName = cursor.getString(1);
+            String dateOfBirth = cursor.getString(2);
+            String password = cursor.getString(3);
+            person = new Person(userID, userName, dateOfBirth, password);
+        }
+        cursor.close();
+        db.close();
+        return person;
+    }
 
+    public boolean removePersonById(String userID) {
+        String query = "SELECT * FROM " + PERSON_TABLE + " WHERE " + PERSON_USER_ID_COL + " = '" + userID + "';";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.getCount() > 0 ) {
+            long result = db.delete("PERSON_TABLE", "userID=?", new String[] {userID});
+            if (result == -1) {
+                return false;
+            } else {
+                return true;
+            }
+        } else {
+            return false;
+        }
+    }
 
+    public void insertPerson(Person person) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(PERSON_USER_ID_COL, person.getUserID());
+        values.put(PERSON_USERNAME_COL, person.getUserName());
+        values.put(PERSON_DATE_COL, person.getDateOfJoin());
+        db.insert(PERSON_TABLE, null, values);
+        db.close();
+    }
 
     // ********************** Event **************************************************
     public Event getEventById(String eventID) {
@@ -238,6 +277,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return events;
     }
+
+    // ********************** EventMembers **************************************************
 
 
 }
