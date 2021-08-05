@@ -281,7 +281,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (cursor.moveToNext()) {
             String coordinatorID = cursor.getString(1);
             String dateOfCreation = cursor.getString(2);
-            event = new Event(eventID, coordinatorID, dateOfCreation);
+            event = new Event(eventID, "", "", coordinatorID, dateOfCreation);
         }
         cursor.close();
         db.close();
