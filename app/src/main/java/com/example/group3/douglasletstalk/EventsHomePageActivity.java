@@ -15,11 +15,14 @@ public class EventsHomePageActivity extends AppCompatActivity {
 
     DatabaseHelper DB;
 
+    Event event;
+
     TextView groupName;
     TextView groupCoordinator;
     TextView groupMembers;
     TextView groupDescripion;
 
+    Button joinBtn;
     Button backBtn;
 
     @Override
@@ -32,6 +35,14 @@ public class EventsHomePageActivity extends AppCompatActivity {
         groupMembers = (TextView) findViewById(R.id.Members);
         groupDescripion = (TextView) findViewById(R.id.Description);
 
+        joinBtn = (Button) findViewById(R.id.joinBtn);
+        joinBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //
+            }
+        });
+
         backBtn = (Button) findViewById(R.id.backBtn);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,7 +52,10 @@ public class EventsHomePageActivity extends AppCompatActivity {
         });
     }
 
+    //accepts an Event type object to display;
     public void displayEvent(Event event){
+
+        this.event = event;
 
         groupName.setText(event.getGroupName());
 
