@@ -1,6 +1,8 @@
 package com.example.group3.douglasletstalk;
 
-public class Person {
+import java.io.Serializable;
+
+public class Person implements Serializable {
 
     String userID;
     String userName;

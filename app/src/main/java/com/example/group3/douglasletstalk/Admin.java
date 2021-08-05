@@ -6,15 +6,10 @@ public class Admin {
     private String name;
     private String password;
 
-    public Admin(){
-        super();
-    }
-
     public Admin(String id, String name, String password){
-        super();
-        setId(id);
-        setName(name);
-        setPassword(password);
+        this.id = id;
+        this.name = name;
+        this.password = password;
     }
 
     public String getId() {

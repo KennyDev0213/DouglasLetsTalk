@@ -7,10 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.example.utility.DatabaseHelper;
 import com.example.utility.Person;
-
 import java.time.LocalDate;
 
 public class RegisterActivity extends AppCompatActivity {
