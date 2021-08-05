@@ -13,7 +13,7 @@ public class Event {
     String groupDescription;
     String dateOfCreation;
 
-    public Event(String groupID, String coordinatorID, String dateOfCreation) {
+    public Event(String groupID, String groupName, String groupDescription, String coordinatorID, String dateOfCreation) {
 
         this.groupID = groupID;
         this.coordinatorID = coordinatorID;
