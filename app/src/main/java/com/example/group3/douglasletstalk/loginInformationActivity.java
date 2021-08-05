@@ -7,6 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+
+import com.example.utility.DatabaseHelper;
+import com.example.utility.Person;
+
 import java.time.LocalDate;
 
 public class loginInformationActivity extends AppCompatActivity {
@@ -21,15 +26,13 @@ public class loginInformationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login_information);
 
 
-        Button confirmButton = findViewById(R.id.confirmButton);
+        Button confirmButton = findViewById(R.id.userLogin);
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(loginInformationActivity.this,UserDashboard.class));
             }
         });
-
-    }
 
         userID = (EditText) findViewById(R.id.userID);
         userPassword = (EditText) findViewById(R.id.userPassword);
@@ -38,7 +41,7 @@ public class loginInformationActivity extends AppCompatActivity {
         db = DatabaseHelper.getInstance(this);
 
         String createTime = LocalDate.now().toString();
-        Person person = new Person("30012345", "Test User", createTime, "123456");
+       Person person = new Person("30012345", "Test User", createTime, "123456");
         db.insertPerson(person);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -65,5 +68,6 @@ public class loginInformationActivity extends AppCompatActivity {
     }
 
 
-
 }
+
+

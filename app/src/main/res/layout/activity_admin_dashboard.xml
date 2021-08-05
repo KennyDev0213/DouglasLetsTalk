@@ -20,12 +20,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="115dp"
-        android:layout_marginLeft="115dp"
         android:layout_marginEnd="117dp"
-        android:layout_marginRight="117dp"
-        android:layout_marginBottom="187dp"
         android:text="@string/deleteUserAccountBtn"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/deleteEventBtn"
+        app:layout_constraintTop_toBottomOf="@id/createUserAccountBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -35,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="115dp"
         android:layout_marginLeft="115dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="150dp"
         android:layout_marginEnd="115dp"
         android:layout_marginRight="115dp"
         android:layout_marginBottom="139dp"
@@ -44,5 +42,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/deleteEventBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="115dp"
+        android:layout_marginLeft="115dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginEnd="115dp"
+        android:layout_marginRight="115dp"
+        android:layout_marginBottom="139dp"
+        android:text="@string/deleteEventBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/deleteUserAccountBtn"  />
 
 </android.support.constraint.ConstraintLayout>

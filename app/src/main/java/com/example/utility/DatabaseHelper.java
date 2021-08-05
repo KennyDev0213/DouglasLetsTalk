@@ -263,6 +263,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return status;
     }
 
+    //delete a person
     public void deletePerson(String userId){
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL("DELETE FROM " + PERSON_TABLE + " WHERE " + PERSON_USER_ID_COL + " = '" + userId + "';");
@@ -324,6 +325,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             i++;
         }
         return events;
+    }
+
+    //check the event exists or not
+    public boolean checkIfEventExists(String eventId){
+        String query = "SELECT * FROM " + EVENT_TABLE + " WHERE " +
+                EVENT_ID_COL + " = '" + eventId + "';";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query,null);
+        boolean status = false;
+        if(cursor.moveToFirst()){
+            status = true;
+        }
+        else{
+            status = false;
+        }
+        cursor.close();
+        db.close();
+        return status;
+    }
+
+    //delete a event
+    public void deleteEvent(String eventId){
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("DELETE FROM " + EVENT_TABLE + " WHERE " + EVENT_ID_COL + " = '" + eventId + "';");
+
     }
 
     // ********************** EventMembers **************************************************

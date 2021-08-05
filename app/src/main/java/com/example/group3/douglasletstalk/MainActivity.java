@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 finish();
-                Intent loginPage = new Intent(MainActivity.this, LoginActivity.class);
+                Intent loginPage = new Intent(MainActivity.this, EnterActivity.class);
                 startActivity(loginPage);
             }
         }, time);

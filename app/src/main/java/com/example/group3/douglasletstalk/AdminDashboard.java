@@ -7,14 +7,14 @@ import android.view.View;
 import android.widget.Button;
 
 public class AdminDashboard extends AppCompatActivity {
-    Button create, delete;
+    Button createUser, deleteUser, deleteEvent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_dashboard);
 
-        create = (Button) findViewById(R.id.createUserAccountBtn);
-        create.setOnClickListener(new View.OnClickListener() {
+        createUser = (Button) findViewById(R.id.createUserAccountBtn);
+        createUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(AdminDashboard.this,RegisterActivity.class));
@@ -22,14 +22,21 @@ public class AdminDashboard extends AppCompatActivity {
         });
 
 
-        delete = (Button) findViewById(R.id.deleteUserAccountBtn);
-        delete.setOnClickListener(new View.OnClickListener() {
+        deleteUser = (Button) findViewById(R.id.deleteUserAccountBtn);
+        deleteUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(AdminDashboard.this,DeleteUser.class));
             }
         });
 
+        deleteEvent = (Button) findViewById(R.id.deleteUserAccountBtn);
+        deleteEvent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AdminDashboard.this,DeleteEvent.class));
+            }
+        });
 
     }
 }

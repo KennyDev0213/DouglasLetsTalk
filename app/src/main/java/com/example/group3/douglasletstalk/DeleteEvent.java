@@ -7,23 +7,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.example.utility.DatabaseHelper;
 
-public class DeleteUser extends AppCompatActivity {
-
-    EditText userID;
+public class DeleteEvent extends AppCompatActivity {
+    EditText eventID;
     Button delete;
 
     DatabaseHelper db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_delete_user);
+        setContentView(R.layout.activity_delete_event);
 
-
-        userID = (EditText) findViewById(R.id.userID);
+        eventID = (EditText) findViewById(R.id.eventID);
         delete = (Button) findViewById(R.id.btndelete);
 
         db = DatabaseHelper.getInstance(this);
@@ -31,22 +29,21 @@ public class DeleteUser extends AppCompatActivity {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String id = userID.getText().toString();
+                String id = eventID.getText().toString();
 
-                Boolean result = db.checkIfPersonExists(id);
+                Boolean result = db.checkIfEventExists(id);
                 if(id.equals("")){
-                    Toast.makeText(DeleteUser.this, "Enter a user ID to delete", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DeleteEvent.this, "Enter a event ID to delete", Toast.LENGTH_SHORT).show();
                 }else if (result){
-                    db.deletePerson(id);
-                    Toast.makeText(DeleteUser.this, "User is deleted", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(DeleteUser.this , AdminDashboard.class);
+                    db.deleteEvent(id);
+                    Toast.makeText(DeleteEvent.this, "Event is deleted", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(DeleteEvent.this , AdminDashboard.class);
                     startActivity(intent);
 
                 }else{
-                    Toast.makeText(DeleteUser.this, "User is not exits", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DeleteEvent.this, "Event is not exits", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
     }
 }

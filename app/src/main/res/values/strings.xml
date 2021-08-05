@@ -40,6 +40,8 @@
     <!-- Delete -->
     <string name="studentIDHint">Enter the Student ID </string>
     <string name="btnDelete">Delete</string>
+    <string name="eventID">Event ID</string>
+    <string name="eventIDHint">Enter an Event ID</string>
 
     <!--User Dashboard Activity-->
     <string name="Announcements">Announcements</string>
@@ -52,6 +54,7 @@
     <!--    Admin Dashboard Activity-->
     <string name="createUserAccountBtn">Create User Account</string>
     <string name="deleteUserAccountBtn">Delete User Account</string>
+    <string name="deleteEventBtn">Delete an Event</string>
 
     <!--    host new group-->
     <string name="DescriptionTitle">Description</string>
