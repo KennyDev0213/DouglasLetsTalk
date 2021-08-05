@@ -35,9 +35,8 @@ public class EventManager {
             return false;
     }
 
-    //to generate the ID will be the username of the organizer + size of the list
-    static private String generateEventID(Person organizer){
-        String newID = organizer.getUserName() + EventIdList.size();
+    static private String generateEventID(String groupName){
+        String newID = groupName + EventIdList.size();
         return  newID;
     }
 
