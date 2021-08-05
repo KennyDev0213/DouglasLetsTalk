@@ -9,9 +9,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.utility.EventManager;
+import com.example.utility.DatabaseHelper;
+import com.example.utility.Event;
 
 public class HostNewGroupActivity extends AppCompatActivity {
+
+    DatabaseHelper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +33,14 @@ public class HostNewGroupActivity extends AppCompatActivity {
                 String newDescription = descriptionText.getText().toString();
                 String newCoordinator = coordinatorText.getText().toString();
 
-                Boolean added = EventManager.createEvent(newName, newDescription, newCoordinator);
+                String eventID = "";
+                Event newEvent = new Event(eventID, newName, newDescription, newCoordinator, "");
+                DB.insertEvent(newEvent);
 
                 Context context = getApplicationContext();
                 CharSequence txt;
                 Toast toast;
-                if(added){
+                if(newEvent != null){
                     txt = "Your Event has been created!";
                     toast = Toast.makeText(context, txt, Toast.LENGTH_SHORT);
                     toast.show();
