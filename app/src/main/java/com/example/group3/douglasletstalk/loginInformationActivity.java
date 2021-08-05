@@ -28,7 +28,7 @@ public class loginInformationActivity extends AppCompatActivity {
         db = DatabaseHelper.getInstance(this);
 
         String createTime = LocalDate.now().toString();
-        Person person = new Person("300123", "Test User", createTime, "123456");
+        Person person = new Person("30012345", "Test User", createTime, "123456");
         db.insertPerson(person);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {

@@ -221,6 +221,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(PERSON_USER_ID_COL, person.getUserID());
         values.put(PERSON_USERNAME_COL, person.getUserName());
         values.put(PERSON_DATE_COL, person.getDateOfJoin());
+        values.put(PERSON_PASSWORD_COL, person.getPassword());
         db.insert(PERSON_TABLE, null, values);
         db.close();
     }
