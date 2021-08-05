@@ -1,4 +1,4 @@
-package com.example.group3.douglasletstalk;
+package com.example.utility;
 
 public class Person {
 
@@ -65,31 +65,4 @@ public class Person {
                 "Name: " + getUserName() + "\n" +
                 "Password: " + getPassword();
     }
-/*
-    String firstName;
-    String lastName;
-    String email;
-
-    public Person(String firstName, String lastName){
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-
-    public Person() {
-
-    }
-
-    public void login(){
-
-     }
-
-     public void logout(){
-
-     }
-
-     public void updateProfile(String email){
-        this.email = email;
-     }
-
-     */
 }
