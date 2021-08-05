@@ -48,6 +48,7 @@ public class RegisterActivity extends AppCompatActivity {
                     }else{
                         db.insertPerson(person);
 
+                        Toast.makeText(RegisterActivity.this, "User create successfully", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(RegisterActivity.this , AdminDashboard.class);
                         startActivity(intent);
                     }

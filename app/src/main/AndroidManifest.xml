@@ -9,19 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name=".DeleteUser" >
-        </activity>
-        <activity android:name=".AdminLogin" />
-        <activity android:name=".UserDashboard" /> <!-- <activity android:name=".SplashActivity" /> -->
-        <activity android:name=".RegisterActivity" />
+        <activity android:name=".DeleteUser"
+            android:parentActivityName=".AdminDashboard"/>
+        <activity android:name=".AdminLogin"
+            android:parentActivityName=".EnterActivity"/>
+        <activity android:name=".UserDashboard"
+            android:parentActivityName=".loginInformationActivity"/>
+        <activity android:name=".RegisterActivity"
+            android:parentActivityName=".AdminDashboard"/>
         <activity android:name=".PolicyActivity" />
-        <activity android:name=".loginInformationActivity" />
+        <activity android:name=".loginInformationActivity"
+            android:parentActivityName=".EnterActivity"/>
         <activity android:name=".LoginActivity" />
         <activity android:name=".HostNewGroupActivity" />
-        <activity android:name=".HelpPageActivity" />
+        <activity android:name=".HelpPageActivity"
+            android:parentActivityName=".EnterActivity"/>
         <activity android:name=".EventsHomePageActivity" />
         <activity android:name=".EnterActivity" />
-        <activity android:name=".AdminDashboard" />
+        <activity android:name=".AdminDashboard"
+            android:parentActivityName=".AdminLogin"/>
         <activity android:name=".SplashActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

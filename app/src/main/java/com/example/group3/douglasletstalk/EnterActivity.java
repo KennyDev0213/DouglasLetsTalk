@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.time.LocalDate;
+
 public class EnterActivity extends AppCompatActivity {
 
     @Override
@@ -14,6 +16,11 @@ public class EnterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter);
 
+        DatabaseHelper db = DatabaseHelper.getInstance(this);
+
+        String createTime = LocalDate.now().toString();
+        Person person = new Person("3001234", "Test User", createTime, "123456");
+        db.insertPerson(person);
 
         Button userEntry = (Button) findViewById(R.id.btnuser);
         Button adminEntry = (Button) findViewById(R.id.btnadmin);

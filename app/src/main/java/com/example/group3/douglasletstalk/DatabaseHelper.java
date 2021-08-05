@@ -263,6 +263,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return status;
     }
 
+    public void deletePerson(String userId){
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("DELETE FROM " + PERSON_TABLE + " WHERE " + PERSON_USER_ID_COL + " = '" + userId + "';");
+
+    }
+
 
 
     // ********************** Event **************************************************
