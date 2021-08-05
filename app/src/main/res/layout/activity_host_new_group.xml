@@ -29,21 +29,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginLeft="40dp"
             android:layout_marginTop="50dp"
             android:text="@string/GroupNameTitle"
             android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/membersInput" />
 
         <EditText
             android:id="@+id/GroupNameInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="10dp"
             android:hint="@string/GroupNameHint"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/groupNameTitle" />
@@ -53,21 +50,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="138dp"
+            android:layout_marginEnd="292dp"
             android:text="@string/CoordinatorsTitle"
             android:textSize="15sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/coordinatorsInput" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/coordinatorsInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="10dp"
             android:hint="@string/CoordinatorsHint"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/CoordinatorsTitle" />
@@ -77,8 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="50dp"
             android:text="@string/MembersTitle"
             android:textSize="15sp"
             android:textStyle="bold"
@@ -90,8 +85,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="10dp"
             android:hint="@string/MembersHint"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/membersTitle" />
@@ -101,21 +94,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="50dp"
             android:text="@string/DescriptionTitle"
             android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/membersInput" />
+            app:layout_constraintTop_toBottomOf="@+id/GroupNameInput" />
 
         <EditText
             android:id="@+id/DescriptionInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="10dp"
             android:hint="@string/DescriptionHint"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/descriptionTitle" />
