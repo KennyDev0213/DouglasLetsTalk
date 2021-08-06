@@ -12,6 +12,8 @@ import android.widget.Toast;
 import com.example.utility.DatabaseHelper;
 import com.example.utility.Event;
 
+import java.time.LocalDate;
+
 public class HostNewGroupActivity extends AppCompatActivity {
 
     DatabaseHelper DB;
@@ -25,6 +27,8 @@ public class HostNewGroupActivity extends AppCompatActivity {
         final EditText descriptionText = (EditText) findViewById(R.id.GroupNameInput);
         final EditText coordinatorText = (EditText) findViewById(R.id.GroupNameInput);
 
+        DB = DatabaseHelper.getInstance(this);
+
         Button finishButton = findViewById(R.id.finishButton);
         finishButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,9 +36,11 @@ public class HostNewGroupActivity extends AppCompatActivity {
                 String newName = nameText.getText().toString();
                 String newDescription = descriptionText.getText().toString();
                 String newCoordinator = coordinatorText.getText().toString();
+                String createTime = LocalDate.now().toString();
+
 
                 String eventID = newName+ "123";
-                Event newEvent = new Event(eventID, newName, newDescription, newCoordinator, "");
+                Event newEvent = new Event(eventID, newName, newDescription, newCoordinator, createTime);
                 DB.insertEvent(newEvent);
 
                 Context context = getApplicationContext();
