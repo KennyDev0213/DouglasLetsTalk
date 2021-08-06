@@ -51,9 +51,12 @@ public class loginInformationActivity extends AppCompatActivity {
                 String pass = userPassword.getText().toString();
 
                 Boolean authenticate = db.checkIfPersonExists(id,pass);
+                Boolean result = db.checkIfPersonExists(id);
 
                 if(id.equals("") || pass.equals("")){
                     Toast.makeText(loginInformationActivity.this, "Please enter id and password", Toast.LENGTH_SHORT).show();
+                }else if(result == false){
+                    Toast.makeText(loginInformationActivity.this, "User not exits", Toast.LENGTH_SHORT).show();
                 }else if(authenticate){
                     Person person1 = db.getPersonById(id);
                     Intent intent = new Intent(loginInformationActivity.this , UserDashboard.class);
