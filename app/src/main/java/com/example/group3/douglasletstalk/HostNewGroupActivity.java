@@ -12,8 +12,6 @@ import android.widget.Toast;
 import com.example.utility.DatabaseHelper;
 import com.example.utility.Event;
 
-import java.time.LocalDate;
-
 public class HostNewGroupActivity extends AppCompatActivity {
 
     DatabaseHelper DB;
@@ -23,36 +21,46 @@ public class HostNewGroupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_host_new_group);
 
+        //get the elements
         final EditText nameText = (EditText) findViewById(R.id.GroupNameInput);
         final EditText descriptionText = (EditText) findViewById(R.id.GroupNameInput);
         final EditText coordinatorText = (EditText) findViewById(R.id.GroupNameInput);
 
-        DB = DatabaseHelper.getInstance(this);
-
+        //get a action listener
         Button finishButton = findViewById(R.id.finishButton);
         finishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //get the values from the elements
                 String newName = nameText.getText().toString();
                 String newDescription = descriptionText.getText().toString();
                 String newCoordinator = coordinatorText.getText().toString();
-                String createTime = LocalDate.now().toString();
-
-
-                String eventID = newName+ "123";
-                Event newEvent = new Event(eventID, newName, newDescription, newCoordinator, createTime);
-                DB.insertEvent(newEvent);
 
                 Context context = getApplicationContext();
                 CharSequence txt;
                 Toast toast;
-                if(newEvent != null){
-                    txt = "Your Event has been created!";
-                    toast = Toast.makeText(context, txt, Toast.LENGTH_SHORT);
-                    toast.show();
-                    startActivity(new Intent(HostNewGroupActivity.this,UserDashboard.class));
+                //if all the fields are filled continue with the proccess else inform the user to to fill the rest out
+                if(newName != "" && newDescription != "" && newCoordinator != ""){
+
+                    //create a new event object
+                    String eventID = newName+"12345";
+                    Event newEvent = new Event(eventID, newName, newDescription, newCoordinator, "");
+                    //if creating the event is a success, push it to the DB
+                    if(newEvent != null) {
+                        DB.insertEvent(newEvent);
+                        txt = "Event Created";
+                        toast = Toast.makeText(context, txt, Toast.LENGTH_SHORT);
+                        toast.show();
+                        startActivity(new Intent(HostNewGroupActivity.this, UserDashboard.class));
+                    }
+                    //else let the user know it failed
+                    else{
+                        txt = "Something failed while making the event";
+                        toast = Toast.makeText(context, txt, Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
                 }else{
-                    txt = "Something failed while making the event";
+                    txt = "You need to fill in all the fields";
                     toast = Toast.makeText(context, txt, Toast.LENGTH_SHORT);
                     toast.show();
                 }
